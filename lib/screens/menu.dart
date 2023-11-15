@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inventory_list_mobile/models.dart';
-import 'card.dart';
+import 'package:inventory_list_mobile/widgets/left_drawer.dart';
+import '../card.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -18,7 +19,10 @@ class MyHomePage extends StatelessWidget {
         title: const Text(
           'Inventory List',
         ),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
       ),
+      drawer: const LeftDrawer(),
       body: SingleChildScrollView(
         // Widget wrapper yang dapat discroll
         child: Padding(
@@ -30,7 +34,7 @@ class MyHomePage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                 // Widget Text untuk menampilkan tulisan dengan alignment center dan style yang sesuai
                 child: Text(
-                  'PBP Shop', // Text yang menandakan toko
+                  'Inventory List', // Text yang menandakan toko
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,

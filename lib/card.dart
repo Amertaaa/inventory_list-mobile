@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'models.dart';
+import 'package:inventory_list_mobile/screens/inventorylist_form.dart';
 class InventoryCard extends StatelessWidget {
   final InventoryItem item;
 
@@ -17,6 +18,13 @@ class InventoryCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
+          if (item.name == "Tambah Item") {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => InventoryFormPage(),
+                ));
+          }
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text
