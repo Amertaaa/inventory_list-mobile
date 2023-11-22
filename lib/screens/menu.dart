@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inventory_list_mobile/models.dart';
 import 'package:inventory_list_mobile/widgets/left_drawer.dart';
-import '../card.dart';
+import '../widgets/card.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);

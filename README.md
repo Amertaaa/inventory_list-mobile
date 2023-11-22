@@ -1,5 +1,64 @@
 # inventory_list_mobile
 
+# Tugas 9 
+## 1.Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON!
+- Anda bisa melakukan pengambilan data JSON tanpa membuat model terlebih dahulu. Ini biasanya dilakukan dengan menggunakan dynamic types atau maps untuk menangani data JSON secara langsung.
+- Lebih Baik? 
+- Untuk prototyping cepat atau ketika berhadapan dengan API yang sering berubah, pendekatan tanpa model bisa lebih cepat dan fleksibel.
+- Untuk aplikasi produksi yang besar dan kompleks, di mana keamanan tipe dan kemudahan pemeliharaan menjadi penting, mendefinisikan model bisa lebih menguntungkan.
+## 2. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.!
+-  Fungsi : mekanisme untuk mengelola cookies dalam permintaan HTTP. 
+- CookieRequest perlu untuk mendapatkan :
+  1. konsistensi sesi =  komponen beirnteraksi dengan server dengan komponen yang sama 
+  2. efisiensi dan pemeliaraan = Jika logika pengelolaan cookies perlu diubah, kita hanya perlu mengubahnya pada satu tempat. 
+  3. performa dan keamanaan = mengoptimalkan performa aplikasi dan membuat menjadi lebih aman.
+
+## 3. Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
+ - mengambil data Json dari web server dapat menggunakan paket http, uri parse. 
+ - megnubah Json tadi menjadi objek dart 
+ - mengkonversi json menjadi model yang sesuai dengan aplikasi
+ - menampilkannya pada flutter
+
+## 4. Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+- membuat login pada flutter seperti textformfield di flutter dan menggunakan elevated button untuk mengirimkan data
+- ketika menekan tombol login dengan credential yang benar, maka flutter akan mengirimkan post dengan url yang benar kepada endpoint flutter. 
+- di django, kita membuat sebuah app baru untuk menerima authentication yang dikirimkan oleh flutter
+- setelah response di tangani oleh django, maka flutter harus menampilkan resultnya. 
+
+## 5. Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.
+
+  1. Scaffold() -> sebagai struktur / fondasi aplikasi
+  2. SingleChildScrollView -> membuat scrollable view untuk childnya
+  3. Column -> mengatur layout dalam bentuk kolom
+  4. Center -> Menengahkan posisi widget
+  5. Padding -> Memberikan jarak antara widget dengan item didalamnya
+  6. Icon -> menampilkan Icon
+  7. Text -> menampilkan text
+  8. IconButton -> membuat icon yang memiliki properti onTap
+  9. InkWell -> membuat sebuah widget memiliki tombol onTap ditambah dengan adanya animasi splash
+  10. TextStyle -> mengatur style dari sebuah text
+  11. Container -> Membungkus widget didalamnya
+  12. TextField -> input di dalam sebuah kotak
+  13. SizedBox -> memberikan ukuran pada kotak
+  14. ElevatedButton -> tombol untuk melakukan interaksi dengan pengguna 
+
+## 6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+- melakukan setup authentikasi pada bagian django terlebih dahulu
+- membuat app baru bernama authentication 
+- menambahkan fungsi pada views yang sesuai dengan yang dibutuhkan dan melakukan routing pada urls.py
+- menambahkan provider dan django_auth pada projek flutter
+- mengubah root widget supaya semua child dapat menggunakan provider
+- membuat login pada flutter dengan nama login.dart 
+- memasukkan kode yang sesuaipada berkas memasukkan url yang sesuai dengan app masing-masing
+- Melihat endpoint json pada website django
+- mengubah json tersebut menjadi dart
+- menambahkan dependencies http pada flutter. 
+- membuat list_product untuk menampilkan data yang telah di masukkan 
+- menambahkan list_produk ke dalam left drawer
+- membuat form untuk mengintegrasikan login dan logout 
+- membuat file baru productdetailpage untuk menampilkan item jika diklik 
+- menambahkan sehingga ketika item di klik akan berpindah ke file/screens yang sudah di buat(productdetailpage). 
+  
 # Tugas 8 
 ## 1.Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
 
